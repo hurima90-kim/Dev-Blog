@@ -1,5 +1,6 @@
 import React, { FunctionComponent } from 'react'
 import styled from '@emotion/styled'
+import { Link } from 'gatsby'
 
 const FooterWrapper = styled.div`
   display: grid;
@@ -11,11 +12,24 @@ const FooterWrapper = styled.div`
   line-height: 1.5;
 `
 
+const IconWrapper = styled.span`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 15%;
+  margin-bottom: 30px;
+`
+
 const Footer: FunctionComponent = function () {
   return (
     <FooterWrapper>
+      <IconWrapper>
+        <Link to="https://www.github.com">Github</Link>
+        <Link to="/">Linked In</Link>
+        <Link to="/">Instagram</Link>
+      </IconWrapper>
       Thank You for Visiting My Blog, Have a Good Day 😍
-      <br />© 2021 Developer Kim, Powered By Gatsby.
+      <br />© 2022 Developer Kim, Powered By Gatsby.
     </FooterWrapper>
   )
 }
