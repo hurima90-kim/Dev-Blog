@@ -10,6 +10,10 @@ const FooterWrapper = styled.div`
   font-size: 15px;
   text-align: center;
   line-height: 1.5;
+
+  @media (max-width: 768px) {
+    font-size: 13px;
+  }
 `
 
 const IconWrapper = styled.span`
@@ -18,6 +22,10 @@ const IconWrapper = styled.span`
   align-items: center;
   width: 15%;
   margin-bottom: 30px;
+
+  @media (max-width: 768px) {
+    width: 50%;
+  }
 `
 
 const Footer: FunctionComponent = function () {

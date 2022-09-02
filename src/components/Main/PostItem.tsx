@@ -29,6 +29,10 @@ const ThumbnailImage = styled.img`
   height: 200px;
   border-radius: 10px;
   object-fit: cover;
+
+  @media (max-width: 768px) {
+    display: none;
+  }
 `
 
 const PostItemContent = styled.div`
