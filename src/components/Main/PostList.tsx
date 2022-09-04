@@ -2,15 +2,23 @@ import React, { FunctionComponent } from 'react'
 import styled from '@emotion/styled'
 import PostItem from './PostItem'
 
-const POST_ITEM_DATA = {
-  title: 'Post Item Title',
-  date: '2020.01.29.',
-  categories: ['Web', 'Frontend', 'Testing'],
-  summary:
-    'Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident repellat doloremque fugit quis rem temporibus! Maxime molestias, suntrem debitis odit harum impedit. Modi cupiditate harum dignissimos eos in corrupti!',
-  thumbnail:
-    'https://images.unsplash.com/photo-1453728013993-6d66e9c9123a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTF8fGNoYW5nZXxlbnwwfHwwfHw%3D&w=1000&q=80',
-  link: 'https://www.google.com',
+export type PostType = {
+  node: {
+    id: string
+    frontmatter: {
+      title: string
+      summary: string
+      date: string
+      categories: string[]
+      thumbnail: {
+        publicURL: string
+      }
+    }
+  }
+}
+
+type PostListProps = {
+  posts: PostType[]
 }
 
 const PostListWrapper = styled.div`
@@ -27,13 +35,12 @@ const PostListWrapper = styled.div`
   }
 `
 
-const PostList: FunctionComponent = function () {
+const PostList: FunctionComponent<PostListProps> = function ({ posts }) {
   return (
     <PostListWrapper>
-      <PostItem {...POST_ITEM_DATA} />
-      <PostItem {...POST_ITEM_DATA} />
-      <PostItem {...POST_ITEM_DATA} />
-      <PostItem {...POST_ITEM_DATA} />
+      {posts.map(({ node: { id, frontmatter } }: PostType) => (
+        <PostItem {...frontmatter} link="https://www.google.com" key={id} />
+      ))}
     </PostListWrapper>
   )
 }
