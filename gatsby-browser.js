@@ -1,7 +1,2 @@
-/**
- * Implement Gatsby's Browser APIs in this file.
- *
- * See: https://www.gatsbyjs.com/docs/browser-apis/
- */
-
-// You can delete this file if you're not using it
+// prism-tomorrow 테마 적용을 위한 import 구문
+import 'prismjs/themes/prism-tomorrow.css'
