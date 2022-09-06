@@ -6,12 +6,18 @@ module.exports = {
     siteUrl: `https://gatsbystarterdefaultsource.gatsbyjs.io/`,
   },
   plugins: [
-    `gatsby-plugin-image`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `contents`,
         path: `${__dirname}/contents`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `images`,
+        path: `${__dirname}/static`,
       },
     },
     {
@@ -21,10 +27,20 @@ module.exports = {
         allExtensions: true,
       },
     },
-    `gatsby-plugin-react-helmet`,
+    {
+      resolve: `gatsby-plugin-sharp`,
+      options: {
+        defaults: {
+          formats: ['auto', 'webp'],
+          quality: 100,
+          placeholder: 'blurred',
+        },
+      },
+    },
     `gatsby-transformer-sharp`,
-    `gatsby-plugin-sharp`,
+    `gatsby-plugin-image`,
     `gatsby-plugin-emotion`,
+    `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-transformer-remark`,
       options: {
