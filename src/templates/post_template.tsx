@@ -4,6 +4,7 @@ import { PostFrontmatterType, PostPageItemType } from 'types/PostItem.types'
 import Template from 'components/Common/Template'
 import PostHead from 'components/Post/PostHead'
 import PostContent from 'components/Post/PostContent'
+import CommentWidget from 'components/Post/CommentWidget'
 
 type PostTemplateProps = {
   data: {
@@ -47,8 +48,10 @@ const PostTemplate: FunctionComponent<PostTemplateProps> = function ({
         date={date}
         categories={categories}
         thumbnail={gatsbyImageData}
+        // {...frontmatter}
       />
       <PostContent html={html} />
+      <CommentWidget />
     </Template>
   )
 }
