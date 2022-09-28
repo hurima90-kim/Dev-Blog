@@ -4,6 +4,11 @@ module.exports = {
     description: `주니어 개발자 킴의 성장과정을 담아두는 기술 블로그입니다.`,
     author: `Developer Kim`,
     siteUrl: `https://gatsbystarterdefaultsource.gatsbyjs.io/`,
+    social: {
+      github: `soohoowoohoo`,
+      linkedIn: `soohoowoohoo`,
+      instagram: `soohoowoohoo`,
+    },
   },
   plugins: [
     {
@@ -87,5 +92,11 @@ module.exports = {
       },
     },
     'gatsby-plugin-sitemap',
+    {
+      resolve: 'gatsby-plugin-robots-txt',
+      options: {
+        policy: [{ userAgent: '*', allow: '/' }],
+      },
+    },
   ],
 }
