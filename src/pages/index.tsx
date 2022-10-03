@@ -1,5 +1,4 @@
 import React, { FunctionComponent, useMemo } from 'react'
-import styled from '@emotion/styled'
 import Introduction from 'components/Main/Introduction'
 import Template from 'components/Common/Template'
 import CategoryList, { CategoryListProps } from 'components/Main/CategoryList'
