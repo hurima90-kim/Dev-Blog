@@ -71,6 +71,12 @@ module.exports = {
             },
           },
           {
+            resolve: `gatsby-remark-image-attributes`,
+            options: {
+              dataAttributes: true,
+            },
+          },
+          {
             resolve: 'gatsby-remark-copy-linked-files',
             options: {},
           },
